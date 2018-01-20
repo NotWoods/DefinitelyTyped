@@ -4861,10 +4861,10 @@ export class LineSegments extends Line {
     );
 }
 
-export class Mesh extends Object3D {
-    constructor(geometry?: Geometry | BufferGeometry, material?: Material | Material []);
+export class Mesh<G extends Geometry | BufferGeometry = Geometry | BufferGeometry> extends Object3D {
+    constructor(geometry?: G, material?: Material | Material []);
 
-    geometry: Geometry|BufferGeometry;
+    geometry: G;
     material: Material | Material[];
     drawMode: TrianglesDrawModes;
     morphTargetInfluences?: number[];
